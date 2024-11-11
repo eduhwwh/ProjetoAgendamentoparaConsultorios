@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 23/10/2024 às 01:44
--- Versão do servidor: 10.4.32-MariaDB
--- Versão do PHP: 8.2.12
+-- Tempo de geração: 11-Nov-2024 às 20:34
+-- Versão do servidor: 10.4.27-MariaDB
+-- versão do PHP: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `cadcliente`
+-- Estrutura da tabela `cadcliente`
 --
 
 CREATE TABLE `cadcliente` (
@@ -39,7 +39,7 @@ CREATE TABLE `cadcliente` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `cadmedico`
+-- Estrutura da tabela `cadmedico`
 --
 
 CREATE TABLE `cadmedico` (
@@ -52,24 +52,63 @@ CREATE TABLE `cadmedico` (
   `senha` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `confirmacaoconsulta`
+--
+
+CREATE TABLE `confirmacaoconsulta` (
+  `id` int(11) NOT NULL,
+  `confirmacaoConsulta` int(11) NOT NULL,
+  `id_confirConsulta` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `disponibilidadeconsulta`
+--
+
+CREATE TABLE `disponibilidadeconsulta` (
+  `id` int(11) NOT NULL,
+  `dia` varchar(255) NOT NULL,
+  `horario` int(11) NOT NULL,
+  `id_cadMedico` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 --
 -- Índices para tabelas despejadas
 --
 
 --
--- Índices de tabela `cadcliente`
+-- Índices para tabela `cadcliente`
 --
 ALTER TABLE `cadcliente`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices de tabela `cadmedico`
+-- Índices para tabela `cadmedico`
 --
 ALTER TABLE `cadmedico`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT para tabelas despejadas
+-- Índices para tabela `confirmacaoconsulta`
+--
+ALTER TABLE `confirmacaoconsulta`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_confirConsulta` (`id_confirConsulta`);
+
+--
+-- Índices para tabela `disponibilidadeconsulta`
+--
+ALTER TABLE `disponibilidadeconsulta`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_cadMedico` (`id_cadMedico`);
+
+--
+-- AUTO_INCREMENT de tabelas despejadas
 --
 
 --
@@ -83,6 +122,34 @@ ALTER TABLE `cadcliente`
 --
 ALTER TABLE `cadmedico`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `confirmacaoconsulta`
+--
+ALTER TABLE `confirmacaoconsulta`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `disponibilidadeconsulta`
+--
+ALTER TABLE `disponibilidadeconsulta`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Restrições para despejos de tabelas
+--
+
+--
+-- Limitadores para a tabela `confirmacaoconsulta`
+--
+ALTER TABLE `confirmacaoconsulta`
+  ADD CONSTRAINT `confirmacaoconsulta_ibfk_1` FOREIGN KEY (`id_confirConsulta`) REFERENCES `disponibilidadeconsulta` (`id`);
+
+--
+-- Limitadores para a tabela `disponibilidadeconsulta`
+--
+ALTER TABLE `disponibilidadeconsulta`
+  ADD CONSTRAINT `disponibilidadeconsulta_ibfk_1` FOREIGN KEY (`id_cadMedico`) REFERENCES `cadmedico` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
