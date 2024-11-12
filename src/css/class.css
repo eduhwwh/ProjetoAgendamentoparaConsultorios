@@ -1,5 +1,5 @@
 .main-bg {
-    background-image: url('../img/main-bg.svg');
+    background-image: url('../img/background.svg');
     background-size: cover;
     background-position: center center;
     color: var(--white-color);
@@ -15,3 +15,9 @@
   .section {
     min-height: 100vh;
   }
+
+  .menu-spacing{
+    height: 65px;
+  }
+
+  
