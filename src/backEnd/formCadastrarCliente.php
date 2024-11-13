@@ -2,8 +2,6 @@
 
     $nome = $_POST['nome'];
     $sobrenome = $_POST['sobrenome'];
-    $especialidade = $_POST['especialidade'];
-    $crm = $_POST['crm'];
     $email = $_POST['email'];
     $senha = $_POST['senha'];
 
@@ -14,8 +12,8 @@
 
         $hash  = password_hash($senha, PASSWORD_BCRYPT);
 
-        $sql = "INSERT INTO cadmedico(nome,sobrenome,especialidade, crm, email, senha) 
-                    VALUES ('$nome','$sobrenome', '$especialidade', '$crm', '$email', '$hash')";
+        $sql = "INSERT INTO cadcliente(nome,sobrenome,especialidade, crm, email, senha) 
+                    VALUES ('$nome','$sobrenome','$email', '$hash')";
 
         $conn->exec($sql);      
         
