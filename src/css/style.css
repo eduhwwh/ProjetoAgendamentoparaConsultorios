@@ -321,7 +321,9 @@ a {
 /* Layout da Galeria */
 
 .gallery{
-  padding: 60px;
+  padding: 60px 0;
   background-color: var(--color-white-ovo);
+  padding-bottom: 40px;
 }
+
 
