@@ -1,5 +1,6 @@
 :root {
   --primary-color: #0A1128;
+  --primary-color-claro: #1637a3;
   --white-color: #FFFFFF;
   --light-gray-color: #EEEEEE;
   --secondary-color: crimson;
@@ -105,8 +106,10 @@ a {
   right: 0;
   width: 100%;
   z-index: 1;
+  transform: translateX(-100%);
   border-bottom: 0.1rem solid var(--light-gray-color);
 }
+
 
 .menu-content {
   display: flex;
@@ -224,18 +227,21 @@ a {
 
 /*Card*/
 
-.services-section {
-  background-color: #fff;
+.services-item {
+  margin: 20px;
 }
 
 .section-title {
   font-size: 2.4rem;
+  text-align: center;
+  line-height: 1.5;
   color: var(--primary-color);
   font-weight: bold;
 }
 
 .service-card {
   background-color: var(--card-bg-color);
+  margin-top: 15px;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -283,3 +289,34 @@ a {
 .btn-primary:hover {
   background-color: var(--secondary-color);
 }
+
+/* botao de consulta */
+
+.consulta-container{
+  background-color: var(--primary-color-claro) ;
+  padding: 20px;
+  text-align: center;
+  color: var(--white-color);
+}
+
+.consulta-container p{
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.consulta-container button{
+  background-color: var(--secondary-color);
+  color: var(--white-color);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: backgroud-color 0.3s ease;
+}
+
+.consulta-container button:hover{
+  background-color: var(--primary-color);
+}
+
+

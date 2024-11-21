@@ -1,0 +1,27 @@
+@media (max-width: 768px) {
+
+    .carousel-item {
+      height: auto; 
+    }
+  
+    .intro-text-content {
+      position: absolute;
+      bottom: 10%; 
+      left: 45%;
+      transform: translate(-50%, 0);
+      text-align: left;
+      width: 80%;
+    }
+  
+    .intro-text-content h2 {
+      font-size: 2rem;
+    }
+  
+    .btn-primary {
+      padding: 0.8rem 1.5rem;
+      font-size: 1.2rem;
+    }
+  
+  }
+ 
+  
