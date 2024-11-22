@@ -6,6 +6,8 @@
   --secondary-color: crimson;
   --gap: 3rem;
   --color-white-ovo: #f4f4f4;
+  --color-black: #000000;
+  --color-red-primary: #ff9688;
 }
 
 * {
@@ -94,7 +96,7 @@ a {
 }
 
 .menu-spacing {
-  height: 65px;
+  height: 80px;
 }
 
 /*Class*/
@@ -291,14 +293,15 @@ a {
 /* botao de consulta */
 
 .consulta-container{
-  background-color: var(--primary-color-claro) ;
-  padding: 20px;
+  background-color: var(--color-white-ovo) ;
+  padding: 40px;
   text-align: center;
-  color: var(--white-color);
+  /* color: var(--color-red-primary); */
 }
 
 .consulta-container p{
-  font-size: 1.5rem;
+  color: var(--color-black);
+  font-size: 2.5rem;
   margin-bottom: 15px;
 }
 
@@ -318,12 +321,34 @@ a {
 }
 
 /*Botão*/
-/* Layout da Galeria */
 
-.gallery{
+/* Layout da Galeria */
+.gallery {
   padding: 60px 0;
-  background-color: var(--color-white-ovo);
-  padding-bottom: 40px;
+  background-color: #f4f4f4;
+  padding-bottom: 40px; 
+
 }
 
+.gallery .container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px; 
+  align-items: center;
+}
 
+.gallery-item {
+  overflow: hidden;
+  border-radius: 8px; 
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-10px);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}

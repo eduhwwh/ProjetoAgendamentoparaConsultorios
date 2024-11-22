@@ -1,40 +1,54 @@
 /*Carousel*/
 @media (max-width: 768px) {
 
-    .carousel-item {
-      height: auto; 
-    }
-  
-    .intro-text-content {
-      position: absolute;
-      bottom: 30%; 
-      left: 45%;
-      transform: translate(-50%, 0);
-      text-align: left;
-      width: 80%;
-    }
-  
-    .intro-text-content h2 {
-      font-size: 2rem;
-    }
-  
-    .btn-primary {
-      padding: 0.8rem 1.5rem;
-      font-size: 1.2rem;
-    }
-  
+  .carousel-item {
+    height: auto;
   }
- /*Descrição*/
-  @media (max-width: 768px) {
-    .benefits {
-        flex-direction: column;
-        align-items: center;
-    }
 
-    .benefit-item {
-        width: 90%; 
-        margin-bottom: 20px;
-        padding: 20px; 
-        min-height: auto;
-    }
+  .intro-text-content {
+    position: absolute;
+    bottom: 30%;
+    left: 45%;
+    transform: translate(-50%, 0);
+    text-align: left;
+    width: 80%;
   }
+
+  .intro-text-content h2 {
+    font-size: 2rem;
+  }
+
+  .btn-primary {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.2rem;
+  }
+
+}
+
+/*Descrição*/
+@media (max-width: 768px) {
+  .benefits {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .benefit-item {
+    width: 90%;
+    margin-bottom: 20px;
+    padding: 20px;
+    min-height: auto;
+  }
+
+  .gallery .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: auto;
+  }
+
+}
