@@ -1,3 +1,30 @@
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #333;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  .navbar ul li a {
+    padding: 15px 0;
+    width: 100%;
+  }
+
+  .navbar.active ul {
+    display: flex;
+  }
+}
+
 /*Carousel*/
 @media (max-width: 768px) {
 

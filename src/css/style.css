@@ -159,6 +159,12 @@ a {
   left: 25%;
 }
 
+.menu-toggle{
+  display: none;
+  font-size: 2.5rem;
+  color: var(--white-color);
+  cursor: pointer;
+}
 /*Menu*/
 
 .intro-text-content {
