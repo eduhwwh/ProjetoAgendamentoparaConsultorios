@@ -8,7 +8,6 @@
 
         $sql = "SELECT * FROM cadmedico";
         
-
         $resultado = $conn->query($sql);
 
         echo "<table>";

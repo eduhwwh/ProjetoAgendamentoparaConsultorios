@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 11-Nov-2024 às 20:34
--- Versão do servidor: 10.4.27-MariaDB
--- versão do PHP: 8.2.0
+-- Tempo de geração: 24/11/2024 às 22:03
+-- Versão do servidor: 10.4.32-MariaDB
+-- Versão do PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `cadcliente`
+-- Estrutura para tabela `cadcliente`
 --
 
 CREATE TABLE `cadcliente` (
@@ -39,7 +39,7 @@ CREATE TABLE `cadcliente` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `cadmedico`
+-- Estrutura para tabela `cadmedico`
 --
 
 CREATE TABLE `cadmedico` (
@@ -52,10 +52,17 @@ CREATE TABLE `cadmedico` (
   `senha` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Despejando dados para a tabela `cadmedico`
+--
+
+INSERT INTO `cadmedico` (`id`, `nome`, `sobrenome`, `especialidade`, `crm`, `email`, `senha`) VALUES
+(1, 'Marcelo', 'Nobrega', 'Pediatra', 234325, 'marcelo@gmail.com', '$2y$10$jZoZlwm.xQ.anQ5LK8d/MOtiDW3rbhu.zGMQtByirTOPhXnpvYSxa');
+
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `confirmacaoconsulta`
+-- Estrutura para tabela `confirmacaoconsulta`
 --
 
 CREATE TABLE `confirmacaoconsulta` (
@@ -67,7 +74,7 @@ CREATE TABLE `confirmacaoconsulta` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `disponibilidadeconsulta`
+-- Estrutura para tabela `disponibilidadeconsulta`
 --
 
 CREATE TABLE `disponibilidadeconsulta` (
@@ -82,33 +89,33 @@ CREATE TABLE `disponibilidadeconsulta` (
 --
 
 --
--- Índices para tabela `cadcliente`
+-- Índices de tabela `cadcliente`
 --
 ALTER TABLE `cadcliente`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `cadmedico`
+-- Índices de tabela `cadmedico`
 --
 ALTER TABLE `cadmedico`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `confirmacaoconsulta`
+-- Índices de tabela `confirmacaoconsulta`
 --
 ALTER TABLE `confirmacaoconsulta`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_confirConsulta` (`id_confirConsulta`);
 
 --
--- Índices para tabela `disponibilidadeconsulta`
+-- Índices de tabela `disponibilidadeconsulta`
 --
 ALTER TABLE `disponibilidadeconsulta`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_cadMedico` (`id_cadMedico`);
 
 --
--- AUTO_INCREMENT de tabelas despejadas
+-- AUTO_INCREMENT para tabelas despejadas
 --
 
 --
@@ -121,7 +128,7 @@ ALTER TABLE `cadcliente`
 -- AUTO_INCREMENT de tabela `cadmedico`
 --
 ALTER TABLE `cadmedico`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `confirmacaoconsulta`
@@ -136,17 +143,17 @@ ALTER TABLE `disponibilidadeconsulta`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- Restrições para despejos de tabelas
+-- Restrições para tabelas despejadas
 --
 
 --
--- Limitadores para a tabela `confirmacaoconsulta`
+-- Restrições para tabelas `confirmacaoconsulta`
 --
 ALTER TABLE `confirmacaoconsulta`
   ADD CONSTRAINT `confirmacaoconsulta_ibfk_1` FOREIGN KEY (`id_confirConsulta`) REFERENCES `disponibilidadeconsulta` (`id`);
 
 --
--- Limitadores para a tabela `disponibilidadeconsulta`
+-- Restrições para tabelas `disponibilidadeconsulta`
 --
 ALTER TABLE `disponibilidadeconsulta`
   ADD CONSTRAINT `disponibilidadeconsulta_ibfk_1` FOREIGN KEY (`id_cadMedico`) REFERENCES `cadmedico` (`id`);
