@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font Awesome para Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <link rel="stylesheet" href="../src/css/login.css">
+
+    <title>VivaClin - Login</title>
+</head>
+
+<body>
+    <div class="main-container">
+        <!-- Área do Paciente -->
+        <div class="container-login paciente">
+            <div class="form-header">
+                <div class="icon">
+                    <i class="fas fa-user"></i>
+                </div>
+                <h2>Área do Paciente</h2>
+            </div>
+            <form action="pacienteLogin.php" method="post">
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" name="email" placeholder="E-mail" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" name="senha" placeholder="Senha" required>
+                </div>
+                <button type="submit" class="submit-btn">Entrar</button>
+                <p class="registration-link">
+                    Não possui cadastro? <a href="../html/formCadastrarCliente.html">Cadastre-se aqui</a>
+                </p>
+            </form>
+        </div>
+
+      
+    </div>
+</body>
+
+</html>

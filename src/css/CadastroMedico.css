@@ -8,25 +8,19 @@
 body {
     font-family: 'Open Sans', sans-serif;
     font-size: 1.6rem;
-    background: linear-gradient(135deg, #40e0d0, #ffffff);
+    background: linear-gradient(135deg, #20b2aa, #ffffff);
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Container Principal */
-.main-container {
-    display: flex;
-    gap: 2rem;
-}
-
-/* Container Login Geral */
+/* Container Login */
 .container-login {
     background-color: #ffffff;
-    border-radius: 15px;
+    border-radius: 20px;
     padding: 2.5rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
     text-align: center;
     width: 360px;
 }
@@ -36,8 +30,9 @@ body {
     margin-bottom: 2rem;
 }
 
-.form-header .icon {
+.icon {
     font-size: 4rem;
+    color: #40e0d0;
     margin-bottom: 1rem;
 }
 
@@ -45,32 +40,6 @@ h2 {
     font-size: 2rem;
     font-weight: 700;
     color: #333;
-}
-
-/* Área do Paciente */
-.container-login.paciente .icon {
-    color: #40e0d0;
-}
-
-.container-login.paciente .submit-btn {
-    background-color: #40e0d0;
-}
-
-.container-login.paciente .submit-btn:hover {
-    background-color: #339e99;
-}
-
-/* Área do Médico */
-.container-login.medico .icon {
-    color: #007bff;
-}
-
-.container-login.medico .submit-btn {
-    background-color: #007bff;
-}
-
-.container-login.medico .submit-btn:hover {
-    background-color: #0056b3;
 }
 
 /* Input Group */
@@ -101,6 +70,7 @@ h2 {
 
 /* Botão Submit */
 .submit-btn {
+    background-color: #40e0d0;
     color: #ffffff;
     font-size: 1.4rem;
     font-weight: 600;
@@ -112,31 +82,12 @@ h2 {
     transition: background-color 0.3s ease-in-out;
 }
 
-/* Link para Cadastro */
-.registration-link {
-    margin-top: 1rem;
-    font-size: 1rem;
-    color: #333;
-}
-
-.registration-link a {
-    color: #007bff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.registration-link a:hover {
-    color: #0056b3;
+.submit-btn:hover {
+    background-color: #339e99;
 }
 
 /* Responsividade */
-@media (max-width: 768px) {
-    .main-container {
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-
+@media (max-width: 480px) {
     .container-login {
         width: 90%;
     }
