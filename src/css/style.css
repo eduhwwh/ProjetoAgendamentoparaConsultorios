@@ -27,6 +27,7 @@ body {
   line-height: 1.5;
 }
 
+
 h1,
 h2,
 h3,
@@ -165,6 +166,57 @@ a {
   color: var(--white-color);
   cursor: pointer;
 }
+
+/* Menu DropDown */
+
+/* Ajustando o dropdown e alinhamento do "Perfil" */
+
+li.dropdown {
+  display: flex;
+  align-items: center;  /* Centraliza verticalmente o link "Perfil" */
+  justify-content: center; /* Centraliza horizontalmente o link "Perfil" */
+  position: relative;
+}
+
+li.dropdown .dropbtn {
+  padding: 2rem;
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  display: block;
+  text-align: center;  /* Centraliza o texto dentro do link "Perfil" */
+  position: relative;  /* Necessário para o posicionamento do dropdown */
+}
+
+/* Certificando-se de que o dropdown aparece abaixo do "Perfil" */
+li.dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%; /* Posiciona o dropdown logo abaixo do "Perfil" */
+  left: 0;
+  background-color: #fff;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Exibe o dropdown quando o "Perfil" é hover */
+li.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+li.dropdown .dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;  /* Alinha os itens do dropdown à esquerda */
+}
+
+li.dropdown .dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+
 /*Menu*/
 
 .intro-text-content {
