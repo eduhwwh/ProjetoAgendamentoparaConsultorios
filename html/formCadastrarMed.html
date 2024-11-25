@@ -1,27 +1,45 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VivaClin</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <link rel="stylesheet" href="../src/css/login.css">
+
+    <title>VivaClin - Cadastro Medico</title>
 </head>
+
 <body>
-    <form action="../src/backEnd/formCadastrarMed.php" method="post">
+    <div class="container-login">
+        <div class="form-header">
+            <div class="icon">
+                <i class="fas fa-user-circle"></i>
 
-        <label for="nome">Nome:</label><input type="text" name="nome">
-        <br>
-        <label for="sobrenome">Sobrenome:</label><input type="text" name="sobrenome">
-        <br>
-        <label for="especialidade">Especialidade:</label><input type="text" name="especialidade">
-        <br>
-        <label for="crm">Crm:</label><input type="text" name="crm">
-        <br>
-        <label for="email">E-mail:</label><input type="email" name="email" required>
-        <br>
-        <label for="senha">Senha:</label><input type="password" name="senha" required>
-        <br>
-        <button type="submit">Cadastrar</button>
+            </div>
+            <h2>Crie sua conta</h2>
+        </div>
 
-    </form>
+            <form action="../src/backEnd/formCadastrarMed.php" method="post">
+
+                <label for="nome">Nome:</label><input type="text" name="nome">
+                <br>
+                <label for="sobrenome">Sobrenome:</label><input type="text" name="sobrenome">
+                <br>
+                <label for="especialidade">Especialidade:</label><input type="text" name="especialidade">
+                <br>
+                <label for="crm">Crm:</label><input type="text" name="crm">
+                <br>
+                <label for="email">E-mail:</label><input type="email" name="email" required>
+                <br>
+                <label for="senha">Senha:</label><input type="password" name="senha" required>
+                <br>
+                <button type="submit">Cadastrar</button>
+
+            </form>
+        </div>
 </body>
+
 </html>
