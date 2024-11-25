@@ -1,55 +1,94 @@
-*{
+/* Reset */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-html {
-    font-size: 62.5%;
-  }
-  
-  body {
+body {
     font-family: 'Open Sans', sans-serif;
-    font-size: 2rem;
-    background-color: #40e0d0 ;
-    line-height: 1.5;
+    font-size: 1.6rem;
+    background: linear-gradient(135deg, #20b2aa, #ffffff);
     height: 100vh;
     display: flex;
-    align-items: center;
     justify-content: center;
-  }
+    align-items: center;
+}
 
-  .container-login{
-    background-color: rgba(255, 255, 255, 0.645);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow:  0 0 10px rgba(0, 0, 0, 0.5);
-    width: 300px;
+/* Container Login */
+.container-login {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     text-align: center;
-  }
-
-.container-login input{
-    width: 90%;
-    padding: 5px;
-    margin-bottom: 10px;
-    border: 1px solid #0000ff4f;
-    border-radius: 5px;
+    width: 360px;
 }
 
-.container-login button{
-    background-color: #007bff;
-    color: #ffffff;
-    padding: 10px 20px;
+/* Form Header */
+.form-header {
+    margin-bottom: 2rem;
+}
+
+.icon {
+    font-size: 4rem;
+    color: #40e0d0;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+}
+
+/* Input Group */
+.input-group {
+    display: flex;
+    align-items: center;
+    background: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    margin-bottom: 1.5rem;
+    padding: 0.8rem 1.5rem;
+}
+
+.input-group i {
+    color: #40e0d0;
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+
+.input-group input {
     border: none;
-    border-radius: 5px;
+    outline: none;
+    font-size: 1.2rem;
+    flex: 1;
+    color: #333;
+    background: transparent;
+}
+
+/* Botão Submit */
+.submit-btn {
+    background-color: #40e0d0;
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 25px;
+    padding: 1rem;
+    width: 100%;
     cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
 }
 
-.container-login button:hover{
-    background-color: #0056b3;
+.submit-btn:hover {
+    background-color: #339e99;
 }
 
-@media(max-width: 480px){
-    .login-container{
-        width: 80%;
+/* Responsividade */
+@media (max-width: 480px) {
+    .container-login {
+        width: 90%;
     }
 }
