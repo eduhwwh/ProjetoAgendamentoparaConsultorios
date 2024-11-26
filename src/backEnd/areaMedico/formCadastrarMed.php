@@ -1,29 +1,34 @@
 <?php
 
-    $nome = $_POST['nome'];
-    $sobrenome = $_POST['sobrenome'];
-    $especialidade = $_POST['especialidade'];
-    $crm = $_POST['crm'];
-    $email = $_POST['email'];
-    $senha = $_POST['senha'];
+$nome = $_POST['nome'];
+$sobrenome = $_POST['sobrenome'];
+$especialidade = $_POST['especialidade'];
+$crm = $_POST['crm'];
+$email = $_POST['email'];
+$senha = $_POST['senha'];
 
-    try{
-        $conn = new PDO("mysql:host=localhost;dbname=clinica", "root", "");
-        // set the PDO error mode to exception
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+try {
+    $conn = new PDO("mysql:host=localhost;dbname=clinica", "root", "");
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $hash  = password_hash($senha, PASSWORD_BCRYPT);
+    $hash = password_hash($senha, PASSWORD_BCRYPT);
 
-        $sql = "INSERT INTO cadmedico(nome,sobrenome,especialidade, crm, email, senha) 
-                    VALUES ('$nome','$sobrenome', '$especialidade', '$crm', '$email', '$hash')";
+    $sql = "INSERT INTO cadmedico(nome, sobrenome, especialidade, crm, email, senha) 
+            VALUES (?, ?, ?, ?, ?, ?)";
 
-        $conn->exec($sql);      
-        
-        header('Location:/ProjetoAgendamentoparaConsultorios/html/index.html');
-        exit();
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(1, $nome);
+    $stmt->bindParam(2, $sobrenome);
+    $stmt->bindParam(3, $especialidade);
+    $stmt->bindParam(4, $crm);
+    $stmt->bindParam(5, $email);
+    $stmt->bindParam(6, $hash);
+    $stmt->execute();
 
-    }catch(Exception $erro){
-        echo $erro->getMessage();
-    }
+    // Redirecionamento após sucesso
+    header('Location:/ProjetoAgendamentoparaConsultorios/html/login.html');
+    exit();
 
-?>
+} catch (Exception $erro) {
+    echo "Erro ao cadastrar: " . $erro->getMessage();
+}
