@@ -19,7 +19,7 @@
             </div>
             <h2>Cadastro de Paciente</h2>
         </div>
-        <form action="../src/backEnd/formCadastrarCliente.php" method="post">
+        <form action="../src/backEnd/areaCliente/formCadastrarCliente.php" method="post">
             <div class="input-group">
                 <i class="fas fa-user"></i>
                 <input type="text" name="nome" placeholder="Nome" required>
@@ -30,11 +30,19 @@
             </div>
             <div class="input-group">
                 <i class="fas fa-envelope"></i>
+                <input type="text" name="cpf" placeholder="cpf" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
                 <input type="email" name="email" placeholder="E-mail" required>
             </div>
             <div class="input-group">
                 <i class="fas fa-lock"></i>
                 <input type="password" name="senha" placeholder="Senha" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" name="confirSenha" placeholder="Confirme sua Senha" required>
             </div>
             <button type="submit" class="submit-btn">Cadastrar</button>
             <p class="registration-link">
