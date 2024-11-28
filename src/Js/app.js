@@ -1,6 +1,8 @@
-// function toggleMenu(){
-//     document.querySelector('.navbar').classList.toggle('active');
-// }
+function toggleMenu() {
+  const menu = document.querySelector(".menu ul");
+  menu.classList.toggle("active");
+}
+
 
   document.querySelector('.dropbtn').addEventListener('click', function(event) {
     var dropdownContent = document.querySelector('.dropdown-content');

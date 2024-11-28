@@ -101,97 +101,74 @@ a {
 }
 
 /*Class*/
-/*Menu*/
-
 .menu {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
   width: 100%;
-  z-index: 1;
-  border-bottom: 0.1rem solid var(--light-gray-color);
+  z-index: 1000;
+  background: var(--white-color);
+  border-bottom: 1px solid var(--light-gray-color);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona um leve destaque */
 }
-
 
 .menu-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
-.menu h1 {
-  font-size: 2.3rem;
-  color: var(--primary-color);
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 1rem var(--gap);
 }
 
 .menu h1 a {
-  color: inherit;
+  font-size: 2.4rem;
+  color: var(--primary-color);
 }
 
 .menu ul {
-  list-style: none;
   display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+}
+
+.menu ul li {
+  margin-left: 2rem;
 }
 
 .menu ul li a {
-  display: block;
-  padding: 2rem;
   font-size: 1.8rem;
   color: var(--primary-color);
-  position: relative;
 }
 
-.menu ul li a::after {
-  content: '';
-  position: absolute;
-  bottom: 1rem;
-  left: 50%;
-  width: 0;
-  height: 0.2rem;
-  background: var(--secondary-color);
-  transition: all 300ms ease-in-out;
+.menu ul li a:hover {
+  color: var(--secondary-color);
 }
 
-.menu ul li a:hover::after {
-  width: 50%;
-  left: 25%;
-}
-
-.menu-toggle{
+/* Menu Toggle */
+.menu-toggle {
   display: none;
   font-size: 2.5rem;
-  color: var(--white-color);
+  color: var(--primary-color);
   cursor: pointer;
 }
 
-/* Menu DropDown */
-
-/* Ajustando o dropdown e alinhamento do "Perfil" */
-
+/* DropDown Menu */
 li.dropdown {
-  display: flex;
-  align-items: center;  /* Centraliza verticalmente o link "Perfil" */
-  justify-content: center; /* Centraliza horizontalmente o link "Perfil" */
   position: relative;
 }
 
 li.dropdown .dropbtn {
-  padding: 2rem;
   font-size: 1.8rem;
   color: var(--primary-color);
-  display: block;
-  text-align: center;  /* Centraliza o texto dentro do link "Perfil" */
-  position: relative;  /* Necessário para o posicionamento do dropdown */
+  cursor: pointer;
 }
 
-/* Certificando-se de que o dropdown aparece abaixo do "Perfil" */
 li.dropdown .dropdown-content {
   display: none;
   position: absolute;
-  top: 100%; /* Posiciona o dropdown logo abaixo do "Perfil" */
+  top: 100%;
   left: 0;
   background-color: #fff;
   min-width: 160px;
@@ -199,7 +176,6 @@ li.dropdown .dropdown-content {
   z-index: 1;
 }
 
-/* Exibe o dropdown quando o "Perfil" é hover */
 li.dropdown:hover .dropdown-content {
   display: block;
 }
@@ -209,79 +185,71 @@ li.dropdown .dropdown-content a {
   padding: 12px 16px;
   text-decoration: none;
   display: block;
-  text-align: left;  /* Alinha os itens do dropdown à esquerda */
 }
 
 li.dropdown .dropdown-content a:hover {
   background-color: #ddd;
 }
 
-
 /*Menu*/
 
-.intro-text-content {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  /* top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
-  z-index: 2;
-  text-align: left;
-  color: var(--white-color);
-  font-size: 3rem;
-}
-
-.corressel {
+/* Carrossel */
+.carrosel {
   width: 100%;
-  position: relative;
-}
-
-.carousel-slide {
-  width: 100vh;
-  position: relative;
-
-}
-
-.carousel-item {
   position: relative;
 }
 
 .carousel-item img {
-  display: block;
   width: 100%;
-  height: auto;
-  filter: brightness(68%);
+  height: 100vh; /* Ocupa a altura da tela */
+  object-fit: cover;
+  display: block;
+  filter: brightness(60%); /* Escurece a imagem para contraste */
+}
+
+/* Texto centralizado */
+.intro-text-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centraliza o conteúdo */
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  padding: 2rem;
+  /* background: rgba(0, 0, 0, 0.6); Fundo translúcido */
+  border-radius: 8px;
+  max-width: 80%; /* Limita a largura do texto */
 }
 
 .intro-text-content h2 {
-  font-size: 3rem;
-  /* text-transform:capitalize; */
-  line-height: 1.2;
-  margin: 0;
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
 }
 
 .intro-text-content p {
-  text-align: left;
   font-size: 1.6rem;
-  margin-top: 1rem;
-  margin-bottom: 0;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
 }
 
 .btn-primary {
   background-color: var(--primary-color);
   border: none;
-  padding:  1rem;
+  padding: 1rem 2rem;
   color: #fff;
   font-size: 1.4rem;
   border-radius: 4px;
   text-decoration: none;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .btn-primary:hover {
   background-color: var(--secondary-color);
 }
+
+
+
 
 
 
