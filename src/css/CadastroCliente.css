@@ -12,12 +12,11 @@ html {
 body {
     font-family: 'Open Sans', sans-serif;
     font-size: 1.6rem;
-    background: linear-gradient(135deg, #20b2aa, #969494);
+    background: linear-gradient(135deg, #40e0d0, #969494);
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1rem; /* Evita bordas apertadas em telas pequenas */
 }
 
 /* Container Login */
@@ -30,20 +29,19 @@ body {
     width: 100%;
     max-width: 300px; /* Limita a largura máxima */
 }
-
 /* Form Header */
 .form-header {
     margin-bottom: 2rem;
 }
 
-.icon {
+.form-header .icon {
     font-size: 4rem;
-    color: #40e0d0;
     margin-bottom: 1rem;
+    color: #40e0d0;
 }
 
 h2 {
-    font-size: rem;
+    font-size: 2rem;
     font-weight: 700;
     color: #333;
 }
@@ -56,8 +54,7 @@ h2 {
     border: 1px solid #ccc;
     border-radius: 25px;
     margin-bottom: 1.5rem;
-    padding: 1rem;
-    width: 100%; /* Garante responsividade */
+    padding: 0.8rem 1.5rem;
 }
 
 .input-group i {
@@ -77,15 +74,15 @@ h2 {
 
 /* Botão Submit */
 .submit-btn {
-    background-color: #40e0d0;
     color: #ffffff;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-weight: 600;
     border: none;
     border-radius: 25px;
     padding: 1rem;
-    width: 100%; /* Garante que ocupe toda a largura */
+    width: 100%;
     cursor: pointer;
+    background-color: #40e0d0;
     transition: background-color 0.3s ease-in-out;
 }
 
@@ -112,20 +109,8 @@ h2 {
 }
 
 /* Responsividade */
-@media (max-width: 480px) {
-    html {
-        font-size: 55%; /* Reduz o tamanho geral */
-    }
+@media (max-width: 768px) {
     .container-login {
-        padding: 2rem;
-    }
-    h2 {
-        font-size: 1.8rem;
-    }
-    .input-group input {
-        font-size: 1rem;
-    }
-    .submit-btn {
-        font-size: 1.4rem;
+        width: 90%;
     }
 }
