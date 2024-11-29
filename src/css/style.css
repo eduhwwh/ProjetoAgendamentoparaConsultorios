@@ -115,7 +115,7 @@ a {
 
 .menu-content {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   max-width: 120rem;
   margin: 0 auto;
