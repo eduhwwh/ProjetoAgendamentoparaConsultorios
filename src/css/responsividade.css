@@ -47,6 +47,10 @@
 }
 
 @media (max-width: 768px) {
+  .intro-text-content{
+    top: 50%;
+  left: 50%;
+  }
   .intro-text-content h2 {
       font-size: 2rem;
   }

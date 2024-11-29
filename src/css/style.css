@@ -101,6 +101,7 @@ a {
 }
 
 /*Class*/
+/* menu */
 .menu {
   position: fixed;
   top: 0;
@@ -210,15 +211,15 @@ li.dropdown .dropdown-content a:hover {
 /* Texto centralizado */
 .intro-text-content {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 70%;
+  left: 15%;
   transform: translate(-50%, -50%); /* Centraliza o conteúdo */
   z-index: 2;
-  text-align: center;
+  text-align: left;
   color: #fff;
   padding: 2rem;
-  /* background: rgba(0, 0, 0, 0.6); Fundo translúcido */
-  border-radius: 8px;
+  /* background: rgba(0, 0, 0, 0.6); Fundo translúcido  */
+  /* border-radius: 8px; */
   max-width: 80%; /* Limita a largura do texto */
 }
 
