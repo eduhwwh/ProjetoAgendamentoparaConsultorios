@@ -1,3 +1,13 @@
+<?php
+    session_start();
+    if (!isset($_SESSION['id_med']) || !isset($_SESSION['nome_med'])) {
+        header('Location:/ProjetoAgendamentoparaConsultorios/html/login.html');
+        exit();
+    }
+
+    $nomeMedico = $_SESSION['nome_med'];
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -6,6 +16,8 @@
     <title>VivaClin</title>
 </head>
 <body>
+    <h2>Olá, Dr(a). <?php echo htmlspecialchars($nomeMedico); ?>!</21>
+    <p>Preencha os detalhes para cadastrar a sua disponibilidade:</p>
     <form action="..\src\backEnd\areaMedico\cadDisponibilidadeConsul.php" method="post">
 
         <label for="dataConsulta">Data Da Consulta: </label>

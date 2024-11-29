@@ -1,39 +1,33 @@
 <?php
+    session_start();
 
-    $email = $_POST['email'];
-    $senha = $_POST['senha'];
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $email = $_POST['email'];
+        $senha = $_POST['senha'];
 
-    try{
-        $conn = new PDO("mysql:host=localhost;dbname=clinica", "root", "");
-        // set the PDO error mode to exception
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        try {
+            $conn = new PDO("mysql:host=localhost;dbname=clinica", "root", "");
+            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $sql_busca_med = "SELECT * FROM cadmedico
-        WHERE email = ?";
+            $sql = "SELECT * FROM cadmedico WHERE email = ?";
+            $stmt = $conn->prepare($sql);
+            $stmt->execute([$email]);
+            $dados_med = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        $stmt = $conn->prepare($sql_busca_med);
-        $stmt->bindParam(1,$email);
-
-        $stmt->execute();
-
-        $dados_med = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        if($dados_med){
-           
-            if(password_verify($senha,$dados_med['senha'])){
-                $id_usuario = $dados_med['id'];
-                session_start();
-                $_SESSION['id_med'] =  $id_med;            
-                header('Location:/ProjetoAgendamentoparaConsultorios/html/cadDisponibilidadeConsul.html');
-            }else{
-                header('Location:/ProjetoAgendamentoparaConsultorios/html/login.html');
-            }           
-            
-        }else{
-            header('Location:/ProjetoAgendamentoparaConsultorios/html/login.html');
+            if ($dados_med) {
+                if (password_verify($senha, $dados_med['senha'])) {
+                    $_SESSION['id_med'] = $dados_med['id'];
+                    $_SESSION['nome_med'] = $dados_med['nome'];
+                    header('Location: /ProjetoAgendamentoparaConsultorios/html/cadDisponibilidadeConsul.php');
+                    exit();
+                } else {
+                    echo "<script>alert('Senha incorreta!'); window.history.back();</script>";
+                }
+            } else {
+                echo "<script>alert('Usuário não encontrado!'); window.history.back();</script>";
+            }
+        } catch (Exception $erro) {
+            echo "<script>alert('Erro no login: {$erro->getMessage()}'); window.history.back();</script>";
         }
-    }catch(Exception $erro){
-
     }
-
 ?>

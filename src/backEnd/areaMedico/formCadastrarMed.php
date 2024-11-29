@@ -7,6 +7,8 @@ $crm = $_POST['crm'];
 $email = $_POST['email'];
 $senha = $_POST['senha'];
 $confirSenha = $_POST['confirSenha'];
+session_start();
+$id_usuarios = $_SESSION['id_usuario'];
 
 if ($senha !== $confirSenha) {
     echo "<script>alert('As senhas não são iguais!'); window.history.back();</script>";
