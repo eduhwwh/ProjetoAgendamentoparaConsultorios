@@ -42,3 +42,4 @@ try {
 } catch (Exception $erro) {
     echo "Erro ao cadastrar: " . $erro->getMessage();
 }
+?>
