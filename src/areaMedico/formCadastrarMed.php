@@ -1,45 +1,29 @@
 <?php
+    try {
 
-$nome = $_POST['nome'];
-$sobrenome = $_POST['sobrenome'];
-$especialidade = $_POST['especialidade'];
-$crm = $_POST['crm'];
-$email = $_POST['email'];
-$senha = $_POST['senha'];
-$confirSenha = $_POST['confirSenha'];
-session_start();
-$id_usuarios = $_SESSION['id_usuario'];
+        if ($senha !== $confirSenha) {
+            echo "<script>alert('As senhas não são iguais!'); window.history.back();</script>";
+            exit(); 
+        }
 
-if ($senha !== $confirSenha) {
-    echo "<script>alert('As senhas não são iguais!'); window.history.back();</script>";
-    exit();
-}
+        $hash = password_hash($senha, PASSWORD_BCRYPT);
+        include '../src/conexao.php';
 
-try {
-    $conn = new PDO("mysql:host=localhost;dbname=clinica", "root", "");
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $sql = "INSERT INTO cadmedico(nome, sobrenome, especialidade, crm, email, senha) 
+                    VALUES (?, ?, ?, ?, ?, ?)";
 
-    $hash = password_hash($senha, PASSWORD_BCRYPT);
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(1, $nome);
+        $stmt->bindParam(2, $sobrenome);
+        $stmt->bindParam(3, $especialidade);
+        $stmt->bindParam(4, $crm);
+        $stmt->bindParam(5, $email);
+        $stmt->bindParam(6, $hash);
+        $stmt->execute();
 
-    
-            $sql = "INSERT INTO cadmedico(nome, sobrenome, especialidade, crm, email, senha) 
-            VALUES (?, ?, ?, ?, ?, ?)";
+        echo "<script>alert('Cadastro realizado com sucesso!'); window.location.href='../views/login.html';</script>"; // Mensagem de sucesso
 
-            $stmt = $conn->prepare($sql);
-            $stmt->bindParam(1, $nome);
-            $stmt->bindParam(2, $sobrenome);
-            $stmt->bindParam(3, $especialidade);
-            $stmt->bindParam(4, $crm);
-            $stmt->bindParam(5, $email);
-            $stmt->bindParam(6, $hash);
-            $stmt->execute();
-
-        // Redirecionamento após sucesso
-        header('Location:/ProjetoAgendamentoparaConsultorios/views/login.html');
-        exit();
-    
-
-} catch (Exception $erro) {
-    echo "Erro ao cadastrar: " . $erro->getMessage();
-}
+    } catch (Exception $erro) {
+        echo "Erro ao cadastrar: " . $erro->getMessage();
+    }
 ?>
