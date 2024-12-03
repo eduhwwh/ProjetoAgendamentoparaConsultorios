@@ -35,7 +35,7 @@ try {
             $stmt->execute();
 
         // Redirecionamento após sucesso
-        header('Location:/ProjetoAgendamentoparaConsultorios/html/login.html');
+        header('Location:/ProjetoAgendamentoparaConsultorios/views/login.html');
         exit();
     
 

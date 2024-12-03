@@ -31,7 +31,7 @@
         $stmt->bindParam(5, $hash);
         $stmt->execute();     
         
-        header('Location:/ProjetoAgendamentoparaConsultorios/html/loginPaciente.html');
+        header('Location:/ProjetoAgendamentoparaConsultorios/views/loginPaciente.html');
         exit();
 
     }catch(Exception $erro){
