@@ -6,31 +6,57 @@
     }
 
     $nomeMedico = $_SESSION['nome_med'];
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        if (isset($_POST['selectedDates'])) {
+            $selectedDates = $_POST['selectedDates']; // Ex: "6,12,20,24,30"
+            $datesArray = explode(",", $selectedDates); // Transforma em array
+
+            // Aqui você pode salvar as datas no banco de dados
+            foreach ($datesArray as $date) {
+            // Salvar cada data com o ID do médico
+            // Exemplo: INSERT INTO disponibilidade (id_medico, data) VALUES ($id_medico, $date);
+            }
+
+            echo "Disponibilidade cadastrada com sucesso!";
+        } else {
+            echo "Nenhuma data selecionada.";
+        }
+    }
+
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VivaClin</title>
-</head>
-<body>
-    <h2>Olá, Dr(a). <?php echo htmlspecialchars($nomeMedico); ?>!</21>
-    <p>Preencha os detalhes para cadastrar a sua disponibilidade:</p>
-    <form action="..\src\backEnd\areaMedico\cadDisponibilidadeConsul.php" method="post">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../public/css/cadDisponibilidade.css">
+        
+        <title>VivaClin</title>
+    </head>
+    <body>
+        <div class="menu-spacing"></div>
+        <h2>Olá, Dr(a). <?php echo htmlspecialchars($nomeMedico); ?>!</h2>
+        <p>Selecione os dias em que você estará disponível:</p>
 
-        <label for="dataConsulta">Data Da Consulta: </label>
-        <input type="text" name="dataConsulta" placeholder="EX: 11/09/2001">
+        <!-- Calendário Interativo -->
+        <div id="calendar-container">
+            <div id="calendar-header">
+                <button id="prev-month">&lt;</button>
+                <span id="month-year"></span>
+                <button id="next-month">&gt;</button>
+            </div>
+            <div id="calendar"></div>
+        </div>
 
-        <br>
 
-        <label for="horaConsulta">Horario: </label>
-        <input type="text" name="horaConsulta" placeholder="EX: 11/09/2001">
+        <!-- Formulário para envio -->
+        <form action="../src/backEnd/areaMedico/cadDisponibilidadeConsul.php" method="post">
+            <input type="hidden" id="selectedDates" name="selectedDates">
+            <button type="submit">Cadastrar Disponibilidade</button>
+        </form>
 
-        <br>
-
-        <button type="submit">Cadastrar consulta</button>
-    </form>
-</body>
+        <script src="../public/Js/Disponibilidade.js"></script>
+    </body>
 </html>
