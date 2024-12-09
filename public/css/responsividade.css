@@ -1,4 +1,4 @@
-/* Responsiveness */
+/* Index */
 @media screen and (max-width: 768px) {
   .menu ul {
       display: none;
@@ -33,7 +33,7 @@
 
 
 /*Carousel*/
-/* Responsividade */
+
 @media (max-width: 1024px) {
   .intro-text-content{
     top: 50%;
@@ -115,3 +115,64 @@
   }
 
 }
+
+/*Cadastro Paciente e Medico*/
+
+@media (max-width: 768px) {
+  .container-login {
+      width: 90%;
+  }
+  .input-group input {
+      font-size: 2rem;
+  }
+  
+}
+
+@media (max-width: 480px) {
+  html {
+      font-size: 60%;
+      /* Reduz o tamanho geral */
+  }
+
+  .container-login {
+      padding: 2.5rem;
+      max-width: 300px;
+  }
+
+  h2 {
+      font-size: 2.3rem;
+  }
+
+  .input-group input {
+      font-size: 1qrem;
+  }
+
+  .submit-btn {
+      font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container-login {
+      width: 90%;
+  }
+  .input-group input {
+      font-size: 1.5rem;
+  }
+  
+}
+
+/*Login de Paciente e Medico*/
+@media (max-width: 768px) {
+  .main-container {
+      flex-direction: column;
+      gap: 1.5rem;
+  }
+
+  .container-login {
+      /* width: 90%; */
+      padding: 2.5rem;
+      max-width: 350px;
+  }
+}
+

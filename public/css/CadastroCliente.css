@@ -27,7 +27,7 @@ body {
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
     text-align: center;
     width: 100%;
-    max-width: 300px; /* Limita a largura máxima */
+    max-width: 350px; /* Limita a largura máxima */
 }
 /* Form Header */
 .form-header {
@@ -41,7 +41,7 @@ body {
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 700;
     color: #333;
 }
@@ -59,14 +59,14 @@ h2 {
 
 .input-group i {
     color: #40e0d0;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     margin-right: 1rem;
 }
 
 .input-group input {
     border: none;
     outline: none;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     flex: 1;
     color: #333;
     background: transparent;
@@ -93,24 +93,18 @@ h2 {
 /* Link para Cadastro */
 .registration-link {
     margin-top: 1rem;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: #333;
 }
 
 .registration-link a {
     color: #0656e9;
     text-decoration: none;
+    font-size: 1.5rem;
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
 .registration-link a:hover {
     color: #339e99;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    .container-login {
-        width: 90%;
-    }
 }

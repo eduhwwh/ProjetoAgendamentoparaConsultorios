@@ -6,7 +6,8 @@
 }
 
 html {
-    font-size: 62.5%; /* Facilita cálculos de rem */
+    font-size: 62.5%;
+    /* Facilita cálculos de rem */
 }
 
 body {
@@ -17,7 +18,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1rem; /* Evita bordas apertadas em telas pequenas */
+    padding: 1rem;
+    /* Evita bordas apertadas em telas pequenas */
 }
 
 /* Container Login */
@@ -25,10 +27,11 @@ body {
     background-color: #ffffff;
     border-radius: 20px;
     padding: 2.5rem;
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
     text-align: center;
     width: 100%;
-    max-width: 300px; /* Limita a largura máxima */
+    max-width: 400px;
+    /* Limita a largura máxima */
 }
 
 /* Form Header */
@@ -43,7 +46,7 @@ body {
 }
 
 h2 {
-    font-size: rem;
+    font-size: 3.3rem;
     font-weight: 700;
     color: #333;
 }
@@ -57,12 +60,13 @@ h2 {
     border-radius: 25px;
     margin-bottom: 1.5rem;
     padding: 1rem;
-    width: 100%; /* Garante responsividade */
+    width: 100%;
+    /* Garante responsividade */
 }
 
 .input-group i {
     color: #40e0d0;
-    font-size: 1.5rem;
+    font-size: 2.6rem;
     margin-right: 1rem;
 }
 
@@ -84,7 +88,8 @@ h2 {
     border: none;
     border-radius: 25px;
     padding: 1rem;
-    width: 100%; /* Garante que ocupe toda a largura */
+    width: 100%;
+    /* Garante que ocupe toda a largura */
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
 }
@@ -96,36 +101,18 @@ h2 {
 /* Link para Cadastro */
 .registration-link {
     margin-top: 1rem;
-    font-size: 1.2rem;
+    font-size: 1.7rem;
     color: #333;
 }
 
 .registration-link a {
     color: #0656e9;
     text-decoration: none;
+    font-size: 1.7rem;
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
 .registration-link a:hover {
     color: #339e99;
-}
-
-/* Responsividade */
-@media (max-width: 480px) {
-    html {
-        font-size: 55%; /* Reduz o tamanho geral */
-    }
-    .container-login {
-        padding: 2rem;
-    }
-    h2 {
-        font-size: 1.8rem;
-    }
-    .input-group input {
-        font-size: 1rem;
-    }
-    .submit-btn {
-        font-size: 1.4rem;
-    }
 }
