@@ -24,13 +24,13 @@
                 $id_usuario = $dados_cli['id'];
                 session_start();
                 $_SESSION['id_cli'] =  $id_cli;            
-                header('Location:/ProjetoAgendamentoparaConsultorios/html/index.html');
+                header('Location:/ProjetoAgendamentoparaConsultorios/public/index.html');
             }else{
-                header('Location:/ProjetoAgendamentoparaConsultorios/html/loginPaciente.html');
+                header('Location:/ProjetoAgendamentoparaConsultorios/views/loginPaciente.html');
             }           
             
         }else{
-            header('Location:/ProjetoAgendamentoparaConsultorios/html/login.html');
+            header('Location:/ProjetoAgendamentoparaConsultorios/views/loginPaciente.html');
         }
     }catch(Exception $erro){
 

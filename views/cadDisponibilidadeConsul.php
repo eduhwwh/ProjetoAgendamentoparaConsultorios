@@ -1,7 +1,7 @@
 <?php
     session_start();
     if (!isset($_SESSION['id_med']) || !isset($_SESSION['nome_med'])) {
-        header('Location:/ProjetoAgendamentoparaConsultorios/html/login.html');
+        header('Location:/ProjetoAgendamentoparaConsultorios/views/login.html');
         exit();
     }
 

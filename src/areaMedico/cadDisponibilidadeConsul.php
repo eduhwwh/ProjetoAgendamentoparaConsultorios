@@ -15,7 +15,7 @@
 
         $conn->exec($sql);      
         
-        header('Location:/ProjetoAgendamentoparaConsultorios/html/index.html');
+        header('Location:/ProjetoAgendamentoparaConsultorios/public/index.html');
         exit();
 
     }catch(Exception $erro){
