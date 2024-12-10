@@ -52,7 +52,7 @@
 
 
         <!-- Formulário para envio -->
-        <form action="../src/backEnd/areaMedico/cadDisponibilidadeConsul.php" method="post">
+        <form action="../src/areaMedico/cadDisponibilidadeConsul.php" method="post">
             <input type="hidden" id="selectedDates" name="selectedDates">
             <button type="submit">Cadastrar Disponibilidade</button>
         </form>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 24/11/2024 às 22:03
+-- Tempo de geração: 10/12/2024 às 16:39
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -36,6 +36,22 @@ CREATE TABLE `cadcliente` (
   `senha` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Despejando dados para a tabela `cadcliente`
+--
+
+INSERT INTO `cadcliente` (`id`, `nome`, `sobrenome`, `cpf`, `email`, `senha`) VALUES
+(1, 'Joao', 'Silva', '123.456.789', 'joao@gmail.com', '$2y$10$a4JreRVuVLyDLCQnyUYReuuobMVxuib2fhamfLFS2ZhuCQR4mo1ZC'),
+(2, 'Maria ', 'Eduarda', '234.567.890', 'maria@gmail.com', '$2y$10$YexczUyZcmMtZhkRShTTAuZoA9fsW1SPSIKVb6oqKUGuoWcbLXFdm'),
+(3, 'Carlos', 'Pereira ', '345.678.901', 'carlos@gmail.com', '$2y$10$Y5252xGshcb8dUGaJz1rm.g05zQmQJX7u9qk6UPKLXfxpccH.wksW'),
+(4, 'Ana', 'Souza', '456.789.012', 'ana@gmail.com', '$2y$10$djeo4Tzs1knghG5.5K1k.uqvRz.k7msxIOy/n0XPNeww85W9t78Li'),
+(5, 'Lucas', 'Almeida', '567.890.123', 'lucas@gmail.com', '$2y$10$rmAHPm3VOm7kA9b7FNh5quZzJgXROSPPXitDf0U8x9kN2Efz1AoOS'),
+(6, 'Juliana', 'Santos', '678.901.234', 'juliana@gmail.com', '$2y$10$Vj1FPItbW1XS7hQgkeOU2ulmIsWSCivIJcbTechQY21quE8d7My2m'),
+(7, 'Pedro ', 'Costa', '789.012.345', 'pedro@gmail.com', '$2y$10$YDrsXLvqNJcMDmMUM5bBdu7D82ANdzAnDcpu/D5Eq/Bi8Jrw34UG.'),
+(8, 'Fernando', 'Rodrigues', '890.123.456', 'fernando@gmail.com', '$2y$10$BEOyj7FSsd6wn.t2.ixXwOubARfkeSWeQm5Hk7jybKvheEjbODH86'),
+(9, 'Rodrigo', 'Lima', '901.234.567', 'rodrigo@gmail.com', '$2y$10$0Xp3UDQPWahwzGuErR3Tl.cTaCBoHf2jAaxtWzImxBI/iigX/8YZK'),
+(10, 'Camila', 'Martins', '012.345.678', 'camila@gmail.com', '$2y$10$Jr9qY1OCQQS5.terYdGynekSSc7oT2JGKEJXn34nZLLY57mb164XK');
+
 -- --------------------------------------------------------
 
 --
@@ -57,7 +73,16 @@ CREATE TABLE `cadmedico` (
 --
 
 INSERT INTO `cadmedico` (`id`, `nome`, `sobrenome`, `especialidade`, `crm`, `email`, `senha`) VALUES
-(1, 'Marcelo', 'Nobrega', 'Pediatra', 234325, 'marcelo@gmail.com', '$2y$10$jZoZlwm.xQ.anQ5LK8d/MOtiDW3rbhu.zGMQtByirTOPhXnpvYSxa');
+(1, 'Marcelo', 'Nobrega', 'Pediatra', 234325, 'marcelo@gmail.com', '$2y$10$jZoZlwm.xQ.anQ5LK8d/MOtiDW3rbhu.zGMQtByirTOPhXnpvYSxa'),
+(2, 'Gabriel ', 'Oliveira', 'Cardiologista', 12345, 'gabriel@gmail.com', '$2y$10$K8uKWAIOer/4eHAnnNKt1.HKZMeniYGVHlaUYa18HF4.mufNZ5x6q'),
+(3, 'Mariana', 'Costa', 'Pediatra', 12345, 'mariana@gmail.com', '$2y$10$CfsSqEBhRMy0oJUVNYk2GO3OKdYIZn0fqv/hCrfpBVUnRlZ6zpGv2'),
+(4, 'Ricardo', 'Almeida', 'Ortopedista', 12345, 'ricardo@gmail.com', '$2y$10$i5s/V9CO3g5Hs0uX7/7etejbMw03IFjof2VIQNw/0YA2W1hJQ2cv.'),
+(5, 'Luiza', 'Mendes', 'Dermatologista', 12345, 'luiza@gmail.com', '$2y$10$J4nnBCPHWE5CJvOcL4Z5IOZ6I.TGDW7/uzsU00N8YF7qM.hgZ1e4K'),
+(6, 'Felipe', 'Vasconcelos', 'Neurologista', 12345, 'felipe@gmail.com', '$2y$10$nxewQT0JAalqhimf49D03u0jCyIyjXlORdpYgFnk1sJg/PRpr1fau'),
+(7, 'Camila', 'Ribeiro', 'Ginecologista', 12345, 'camila@gmail.com', '$2y$10$NR4HjZ70PSTKT4F3ihxJw.5.2xmq70070Cry87I3boNyfqJ0M6jBm'),
+(8, 'Thiago', 'Pereira', 'Endocrinologista', 12345, 'thiago@gmail.com', '$2y$10$.CHULzDo4aGf.GmU.NrXTOJerqPfs/ea0oIbx5UIXyatgEnh7saX6'),
+(9, 'Ana Beatriz', 'Soares', 'Oftalmologista', 12345, 'anabeatriz@gmail.com', '$2y$10$BA8EoEh5rW6ZjgIbxTLS5uZgCFvknDc1VW5CL4PNtXQpXH3wx2aBO'),
+(10, 'Sofia', 'Lima', 'Psiquiatra', 12345, 'sofia@gmail.com', '$2y$10$yLh43qB6LbokHURL9i69P.xlLJMKtWJsLtlcnhveW1x.iaGCAL/R.');
 
 -- --------------------------------------------------------
 
@@ -70,6 +95,26 @@ CREATE TABLE `confirmacaoconsulta` (
   `confirmacaoConsulta` int(11) NOT NULL,
   `id_confirConsulta` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `disponibilidade`
+--
+
+CREATE TABLE `disponibilidade` (
+  `id` int(11) NOT NULL,
+  `id_medico` int(11) NOT NULL,
+  `dataConsulta` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `disponibilidade`
+--
+
+INSERT INTO `disponibilidade` (`id`, `id_medico`, `dataConsulta`) VALUES
+(1, 6, '2024-12-02'),
+(2, 6, '2024-12-02');
 
 -- --------------------------------------------------------
 
@@ -108,6 +153,13 @@ ALTER TABLE `confirmacaoconsulta`
   ADD KEY `id_confirConsulta` (`id_confirConsulta`);
 
 --
+-- Índices de tabela `disponibilidade`
+--
+ALTER TABLE `disponibilidade`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_medico` (`id_medico`);
+
+--
 -- Índices de tabela `disponibilidadeconsulta`
 --
 ALTER TABLE `disponibilidadeconsulta`
@@ -122,19 +174,25 @@ ALTER TABLE `disponibilidadeconsulta`
 -- AUTO_INCREMENT de tabela `cadcliente`
 --
 ALTER TABLE `cadcliente`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de tabela `cadmedico`
 --
 ALTER TABLE `cadmedico`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de tabela `confirmacaoconsulta`
 --
 ALTER TABLE `confirmacaoconsulta`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `disponibilidade`
+--
+ALTER TABLE `disponibilidade`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `disponibilidadeconsulta`
@@ -151,6 +209,12 @@ ALTER TABLE `disponibilidadeconsulta`
 --
 ALTER TABLE `confirmacaoconsulta`
   ADD CONSTRAINT `confirmacaoconsulta_ibfk_1` FOREIGN KEY (`id_confirConsulta`) REFERENCES `disponibilidadeconsulta` (`id`);
+
+--
+-- Restrições para tabelas `disponibilidade`
+--
+ALTER TABLE `disponibilidade`
+  ADD CONSTRAINT `disponibilidade_ibfk_1` FOREIGN KEY (`id_medico`) REFERENCES `cadmedico` (`id`);
 
 --
 -- Restrições para tabelas `disponibilidadeconsulta`

@@ -1,25 +1,40 @@
+
 <?php
+session_start();
 
-    $dataConsulta = $_POST['dataConsulta'];
-    $horaConsulta = $_POST['horaConsulta'];
-   
+if (!isset($_SESSION['id_med']) || !isset($_SESSION['nome_med'])) {
+    header('Location: /ProjetoAgendamentoparaConsultorios/views/login.html');
+    exit();
+}
 
-    try{
+$idMedico = $_SESSION['id_med'];
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['selectedDates'])) {
+    $selectedDates = explode(",", $_POST['selectedDates']); // Transformar em array
+
+    try {
         $conn = new PDO("mysql:host=localhost;dbname=clinica", "root", "");
-        // set the PDO error mode to exception
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+        $sql = "INSERT INTO disponibilidade(id_medico, dataConsulta) VALUES (:id_medico, :dataConsulta)";
+        $stmt = $conn->prepare($sql);
 
-        $sql = "INSERT INTO disponibilidadeconsulta(dataConsulta,horaConsulta) 
-                    VALUES ('$dataConsulta','$horaConsulta')";
+        foreach ($selectedDates as $date) {
+            // Validar a data antes de inserir
+            if (DateTime::createFromFormat('Y-m-d', $date)) {
+                $stmt->execute([
+                    ':id_medico' => $idMedico,
+                    ':dataConsulta' => $date,
+                ]);
+            }
+        }
 
-        $conn->exec($sql);      
-        
-        header('Location:/ProjetoAgendamentoparaConsultorios/public/index.html');
-        exit();
-
-    }catch(Exception $erro){
-        echo $erro->getMessage();
+        echo "Disponibilidade cadastrada com sucesso!";
+    } catch (Exception $erro) {
+        error_log($erro->getMessage());
+        echo "Ocorreu um erro ao salvar as datas. Tente novamente mais tarde.";
     }
-
+} else {
+    echo "Nenhuma data foi enviada.";
+}
 ?>
