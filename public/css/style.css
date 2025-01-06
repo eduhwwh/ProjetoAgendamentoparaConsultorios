@@ -71,6 +71,10 @@ a {
   text-decoration: none;
 }
 
+p{
+  text-decoration: none;
+}
+
 /*Elementos*/
 
 /*Class*/
@@ -251,11 +255,6 @@ li.dropdown .dropdown-content a:hover {
   background-color: var(--secondary-color);
 }
 
-
-
-
-
-
 /* Descrição */
 .description {
   padding: 60px 0;
@@ -381,4 +380,39 @@ li.dropdown .dropdown-content a:hover {
   width: 100%;
   height: auto;
   display: block;
+}
+
+/* Rodapé */
+.footer {
+  background-color: rgb(122, 121, 121); 
+  color: rgb(255, 255, 255); 
+  padding: 5px 0; 
+  text-align: center; 
+}
+
+.footer-content {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  max-width: 1200px; 
+  margin: 0 auto; 
+  padding: 0 20px; 
+}
+
+.footer-content p{
+  font-size: 15px;
+}
+
+.social-icons {
+  display: flex; 
+  gap: 15px; 
+}
+
+.social-icons img {
+  width: 24px; 
+  transition: transform 0.3s ease; 
+}
+
+.social-icons img:hover {
+  transform: scale(1.1); 
 }
