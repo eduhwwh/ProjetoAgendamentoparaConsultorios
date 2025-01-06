@@ -100,10 +100,12 @@ a {
   height: 95px;
 }
 
+
+
 /*Class*/
 /* menu */
 .menu {
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
@@ -115,7 +117,7 @@ a {
 
 .menu-content {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   max-width: 120rem;
   margin: 0 auto;
@@ -316,6 +318,7 @@ li.dropdown .dropdown-content a:hover {
   margin-bottom: 0;
   text-align: center;
 }
+
 
 /* botao de consulta */
 
