@@ -5,7 +5,7 @@
   --light-gray-color: #EEEEEE;
   --secondary-color: crimson;
   --gap: 3rem;
-  --color-white-ovo: #f4f4f4;
+  --color-white-ovo: #ebeaea;
   --color-black: #000000;
   --color-red-primary: #ff9688;
 }
@@ -103,8 +103,6 @@ p{
 .menu-spacing {
   height: 95px;
 }
-
-
 
 /*Class*/
 /* menu */
@@ -259,7 +257,7 @@ li.dropdown .dropdown-content a:hover {
 .description {
   padding: 60px 0;
   text-align: center;
-  background-color: #f4f4f4;
+  background-color: var(--color-white-ovo);
 }
 
 .description h2 {
@@ -354,7 +352,7 @@ li.dropdown .dropdown-content a:hover {
 /* Layout da Galeria */
 .gallery {
   padding: 60px 0;
-  background-color: #f4f4f4;
+  background-color: var(--color-white-ovo);
   padding-bottom: 40px; 
 
 }
@@ -380,6 +378,74 @@ li.dropdown .dropdown-content a:hover {
   width: 100%;
   height: auto;
   display: block;
+}
+
+/* plano-promocional */
+.container-plano{
+  background-color: var(--color-white-ovo);
+  padding: 30px 0 30px 0;
+}
+
+.container-plano .promo  {
+  text-align: center;
+  padding: 30px 30px;
+  color: var(--color-black) !important;
+}
+
+.cards-plano{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px
+}
+
+.cards-plano .card{
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 280px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card h3 {
+  font-size: 4.5rem; 
+  color: var(--color-black);
+  margin-bottom: 25px;
+}
+
+.card p {
+  font-size: 14px;
+  color: #555;
+  margin: 5px 0;
+}
+
+.price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #f8c400;
+  margin: 10px 0;
+}
+
+.but {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #0a8b50;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.but:hover {
+  background-color: #087040;
 }
 
 /* Rodapé */
