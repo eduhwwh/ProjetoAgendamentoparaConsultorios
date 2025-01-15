@@ -1,3 +1,10 @@
+<?php
+  session_start();
+
+  // Verifica se o cliente está logado
+  $clienteLogado = isset($_SESSION['cliente_id']);
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -24,28 +31,40 @@
 </head>
 
 <body class="main-bg">
-  <aside class="menu white-bg">
+<aside class="menu white-bg">
     <div class="main-content menu-content">
-      <h1 class="logo">
-        <a href="#">LOGO</a>
-      </h1>
-      <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
-      <nav class="menu-nav">
-        <ul>
-          <li><a href="#">Agendar consulta</a></li>
-          <li><a href="#">Consultas</a></li>
-          <!-- Menu Dropdown Perfil -->
-          <li class="dropdown">
-            <a href="#" class="dropbtn">Perfil</a>
-            <div class="dropdown-content">
-              <a href="../views/loginPaciente.html">Área Paciente</a>
-              <a href="../views/login.html">Área Médico</a>
-            </div>
-          </li>
-        </ul>
-      </nav>
+        <h1 class="logo">
+            <a href="#">LOGO</a>
+        </h1>
+        <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+        <nav class="menu-nav">
+            <ul>
+                <?php if (isset($_SESSION['cliente_id'])): ?>
+                    <!-- Cliente Logado -->
+                    <li><a href="../src/areaCliente/agendarConsulta.php">Agendar consulta</a></li>
+                    <li><a href="../src/areaCliente/minhasConsultas.php">Minhas consultas</a></li>
+                    <li><a href="../src/logoutCli.php" onclick="return confirm('Tem certeza que deseja sair?')">Sair</a></li>
+                <?php else: ?>
+                    <!-- Cliente Não Logado -->
+                    <li>
+                        <a href="../views/loginPaciente.html" onclick="alert('Você precisa estar logado para agendar uma consulta!')">Agendar consulta</a>
+                    </li>
+                    <li><a href="#">Consultas</a></li>
+                    <!-- Menu Dropdown Perfil -->
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Perfil</a>
+                        <div class="dropdown-content">
+                            <a href="../views/loginPaciente.html">Área Paciente</a>
+                            <a href="../views/login.html">Área Médico</a>
+                        </div>
+                    </li>
+                <?php endif; ?>
+            </ul>
+        </nav>
     </div>
-  </aside>
+</aside>
+
+
 
 
   <!-- carrousel -->
