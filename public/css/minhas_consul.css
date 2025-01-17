@@ -1,0 +1,141 @@
+:root {
+    --primary-color: #0A1128;
+    --primary-color-claro: #1637a3;
+    --white-color: #FFFFFF;
+    --light-gray-color: #EEEEEE;
+    --secondary-color: crimson;
+    --gap: 3rem;
+    --color-white-ovo: #ebeaea;
+    --color-black: #000000;
+    --color-red-primary: #ff9688;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*Elementos*/
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: linear-gradient(135deg, #47b8ac,  #dad7d7);
+    font-size: 2rem;
+    color: var(--primary-color);
+    line-height: 1.5;
+}
+
+
+h1,
+h2 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+    font-size: 6rem;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: 6rem;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 5.5rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    text-decoration: none;
+}
+
+.menu-spacing {
+    height: 200px;
+}
+
+/*Elementos*/
+
+h1 {
+    text-align: center;
+    color: var(--color-black);
+}
+
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #0084ff00;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Rodapé */
+
+.footer {
+    background-color: rgb(122, 121, 121);
+    color: rgb(255, 255, 255);
+    padding: 35px 0;
+    text-align: center;
+    margin-top: 6.1vw;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.footer-content p {
+    font-size: 15px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons img {
+    width: 24px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 600px) {
+    table {
+        width: 100%;
+    }
+}

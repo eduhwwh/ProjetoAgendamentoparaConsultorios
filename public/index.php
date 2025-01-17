@@ -189,7 +189,7 @@
 
 
   <!-- Rodapé -->
-  <footer class="footer" id="footer">
+  <footer class="footer">
     <div class="container">
       <div class="footer-content">
         <p>©2025 VivaClin. Todos os direitos reservados.</p>

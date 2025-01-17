@@ -20,12 +20,18 @@ $consultas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../public/css/minhas_consul.css">
     <title>Minhas Consultas</title>
 </head>
+
 <body>
+
+    <div class="menu-spacing"></div>
+
     <h1>Minhas Consultas</h1>
     <table>
         <thead>
@@ -38,12 +44,42 @@ $consultas = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <tbody>
             <?php foreach ($consultas as $consulta): ?>
                 <tr>
-                    <td><?= htmlspecialchars($consulta['medico']) ?></td>
-                    <td><?= htmlspecialchars($consulta['especialidade']) ?></td>
-                    <td><?= htmlspecialchars($consulta['data_consulta']) ?></td>
+                    <td>
+                        <?= htmlspecialchars($consulta['medico']) ?>
+                    </td>
+                    <td>
+                        <?= htmlspecialchars($consulta['especialidade']) ?>
+                    </td>
+                    <td>
+                        <?= htmlspecialchars($consulta['data_consulta']) ?>
+                    </td>
                 </tr>
             <?php endforeach; ?>
         </tbody>
     </table>
+
+    <div class="menu-spacing"></div>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>©2025 VivaClin. Todos os direitos reservados.</p>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><img
+                            src="https://img.icons8.com/material-outlined/24/ffffff/facebook-new.png"
+                            alt="Facebook" /></a>
+                    <a href="#" aria-label="Twitter"><img
+                            src="https://img.icons8.com/material-outlined/24/ffffff/twitter-squared.png"
+                            alt="Twitter" /></a>
+                    <a href="#" aria-label="Instagram"><img
+                            src="https://img.icons8.com/material-outlined/24/ffffff/instagram-new.png"
+                            alt="Instagram" /></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
 </body>
+
 </html>
