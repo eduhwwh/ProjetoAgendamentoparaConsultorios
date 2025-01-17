@@ -42,7 +42,7 @@
                 <?php if (isset($_SESSION['cliente_id'])): ?>
                     <li><a href="../src/areaCliente/agendarConsulta.php">Agendar consulta</a></li>
                     <li><a href="../src/areaCliente/minhasConsultas.php">Minhas consultas</a></li>
-                    <li><a href="../src/logout.php" onclick="return confirm('Tem certeza que deseja sair?')">Sair</a></li>
+                    <li><a href="../src/logoutCli.php" onclick="return confirm('Tem certeza que deseja sair?')">Sair</a></li>
                 <?php else: ?>
                     <li><a href="../views/loginRequired.php">Agendar consulta</a></li>
                     <li><a href="#">Consultas</a></li>
