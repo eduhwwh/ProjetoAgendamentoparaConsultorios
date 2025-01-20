@@ -33,31 +33,25 @@ $consultas = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <div class="menu-spacing"></div>
 
     <h1>Minhas Consultas</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Médico</th>
-                <th>Especialidade</th>
-                <th>Data da Consulta</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($consultas as $consulta): ?>
-                <tr>
-                    <td>
-                        <?= htmlspecialchars($consulta['medico']) ?>
-                    </td>
-                    <td>
-                        <?= htmlspecialchars($consulta['especialidade']) ?>
-                    </td>
-                    <td>
-                        <?= htmlspecialchars($consulta['data_consulta']) ?>
-                    </td>
-                </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
 
+    <div class="cards-container">
+        <?php foreach ($consultas as $consulta): ?>
+            <div class="cards">
+                <div class="pin">
+                    <h3>Médico:
+                        <?= htmlspecialchars($consulta['medico']) ?>
+                    </h3>
+                    <p>Especialidade:
+                        <?= htmlspecialchars($consulta['especialidade']) ?>
+                    </p>
+                    <p>Data da Consulta:
+                        <?= htmlspecialchars($consulta['data_consulta']) ?>
+                    </p>
+                </div>
+            </div>
+
+        <?php endforeach; ?>
+    </div>
     <div class="menu-spacing"></div>
 
     <!-- Rodapé -->

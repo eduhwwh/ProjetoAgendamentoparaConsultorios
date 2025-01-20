@@ -22,7 +22,7 @@ html {
 
 body {
     font-family: 'Open Sans', sans-serif;
-    background: linear-gradient(135deg, #47b8ac,  #dad7d7);
+    background: linear-gradient(180deg, #47b8ac,  #eeecec);
     font-size: 2rem;
     color: var(--primary-color);
     line-height: 1.5;
@@ -63,39 +63,95 @@ p {
 /*Elementos*/
 
 h1 {
+    padding: 30px;
     text-align: center;
     color: var(--color-black);
 }
 
-table {
-    width: 80%;
-    margin: 20px auto;
-    border-collapse: collapse;
-    background: white;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+.cards-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Estilo do card */
+.cards {
+    position: relative;
+    width: 280px; /* Ajuste para largura fixa e centralizada */
+    min-height: 180px; /* Altura mínima dos cards */
+    background: #fff;
     border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px 10px;
+    text-align:center;
+    font-family: 'Open Sans', sans-serif;
     overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-th,
-td {
-    padding: 12px;
-    text-align: center;
-    border-bottom: 1px solid #ddd;
+.cards:hover {
+    transform: translateY(-5px); /* Sutil movimento ao passar o mouse */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
-th {
-    background-color: #0084ff00;
-    color: white;
+/* Alfinete */
+.cards .pin {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    background-color: crimson; /* Cor do alfinete */
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    border: 2px solid white;
 }
 
-tr:nth-child(even) {
-    background-color: #f9f9f9;
+/* Linha de sustentação do alfinete */
+.cards::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    height: 15px;
+    background-color: crimson;
 }
 
-tr:hover {
-    background-color: #f1f1f1;
+/* Conteúdo do card */
+.cards h3 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    margin-top: 30px; /* Espaço para alfinete */
 }
+
+.cards p {
+    /* text-align: left; */
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .cards {
+        width: 90%; /* Cards ocupam quase toda a largura em telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .cards {
+        width: 100%; /* Cards ocupam toda a largura */
+    }
+}
+
+
+
 
 /* Rodapé */
 
@@ -104,7 +160,7 @@ tr:hover {
     color: rgb(255, 255, 255);
     padding: 35px 0;
     text-align: center;
-    margin-top: 6.1vw;
+    margin-top: 10vw;
 }
 
 .footer-content {
@@ -132,10 +188,4 @@ tr:hover {
 
 .social-icons img:hover {
     transform: scale(1.1);
-}
-
-@media (max-width: 600px) {
-    table {
-        width: 100%;
-    }
 }
