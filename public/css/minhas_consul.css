@@ -68,6 +68,8 @@ h1 {
     color: var(--color-black);
 }
 
+/* Estilo do card */
+
 .cards-container{
     display: flex;
     flex-wrap: wrap;
@@ -76,7 +78,7 @@ h1 {
     padding: 20px;
 }
 
-/* Estilo do card */
+
 .cards {
     position: relative;
     width: 280px; /* Ajuste para largura fixa e centralizada */
@@ -84,8 +86,8 @@ h1 {
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    padding: 20px 10px;
-    text-align:center;
+    padding: 40px 20px;
+    text-align: center;
     font-family: 'Open Sans', sans-serif;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -98,7 +100,7 @@ h1 {
 
 /* Alfinete */
 .cards .pin {
-    position: absolute;
+    position: sticky;
     top: -10px;
     left: 50%;
     transform: translateX(-50%);
@@ -110,7 +112,7 @@ h1 {
     border: 2px solid white;
 }
 
-/* Linha de sustentação do alfinete */
+/* Linha de sustentação do alfinete
 .cards::before {
     content: '';
     position: absolute;
@@ -120,6 +122,17 @@ h1 {
     width: 3px;
     height: 15px;
     background-color: crimson;
+} */
+
+/* Classe para consultas canceladas */
+.cards.canceled .pin,
+.cards.canceled::before {
+    display: none; /* Remove o alfinete e a linha de sustentação */
+}
+
+.cards.canceled {
+    background-color: #f8d7da; /* Fundo leve para indicar que a consulta foi cancelada */
+    border: 2px solid crimson; /* Borda vermelha */
 }
 
 /* Conteúdo do card */
@@ -131,11 +144,11 @@ h1 {
 }
 
 .cards p {
-    /* text-align: left; */
     font-size: 1.4rem;
     color: var(--primary-color);
     margin-bottom: 5px;
 }
+
 
 /* Responsividade */
 @media (max-width: 768px) {
@@ -160,7 +173,7 @@ h1 {
     color: rgb(255, 255, 255);
     padding: 35px 0;
     text-align: center;
-    margin-top: 10vw;
+    margin-top: 15vw;
 }
 
 .footer-content {

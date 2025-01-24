@@ -49,33 +49,36 @@ unset($_SESSION['mensagem']);
     <?php endif; ?>
 
     <div class="cards-container">
-        <?php if (empty($consultas)): ?>
-            <p>Você ainda não possui consultas agendadas.</p>
-        <?php else: ?>
-            <?php foreach ($consultas as $consulta): ?>
-                <div class="cards">
-                    <div class="pin"></div>
-                    <h3>Médico: <?= htmlspecialchars($consulta['medico']) ?></h3>
-                    <p>Especialidade: <?= htmlspecialchars($consulta['especialidade']) ?></p>
-                    <p>Data da Consulta: 
-                        <?php
-                        // Remover a hora da data
-                        $data_formatada = date("d/m/Y", strtotime($consulta['data_consulta']));
-                        echo htmlspecialchars($data_formatada);
-                        ?>
-                    </p>
-                    <?php if ($consulta['cancelada']): ?>
-                        <p style="color: crimson;">Consulta Cancelada</p>
-                    <?php else: ?>
-                        <form method="POST" action="desmarcarConsulta.php" onsubmit="return confirm('Deseja realmente desmarcar esta consulta?');">
-                            <input type="hidden" name="consulta_id" value="<?= htmlspecialchars($consulta['id']) ?>">
-                            <button type="submit">Desmarcar</button>
-                        </form>
-                    <?php endif; ?>
-                </div>
-            <?php endforeach; ?>
-        <?php endif; ?>
-    </div>
+    <?php if (empty($consultas)): ?>
+        <p>Você ainda não possui consultas agendadas.</p>
+    <?php else: ?>
+        <?php foreach ($consultas as $consulta): ?>
+            <div class="cards <?php if ($consulta['cancelada']) echo 'canceled'; ?>">
+                <?php if (!$consulta['cancelada']): ?>
+                    <div class="pin"></div> <!-- Exibe o alfinete apenas se não estiver cancelada -->
+                <?php endif; ?>
+                <h3>Médico: <?= htmlspecialchars($consulta['medico']) ?></h3>
+                <p>Especialidade: <?= htmlspecialchars($consulta['especialidade']) ?></p>
+                <p>Data da Consulta: 
+                    <?php
+                    // Remover a hora da data
+                    $data_formatada = date("d/m/Y", strtotime($consulta['data_consulta']));
+                    echo htmlspecialchars($data_formatada);
+                    ?>
+                </p>
+                <?php if ($consulta['cancelada']): ?>
+                    <p style="color: crimson;">Consulta Cancelada</p>
+                <?php else: ?>
+                    <form method="POST" action="desmarcarConsulta.php" onsubmit="return confirm('Deseja realmente desmarcar esta consulta?');">
+                        <input type="hidden" name="consulta_id" value="<?= htmlspecialchars($consulta['id']) ?>">
+                        <button type="submit">Desmarcar</button>
+                    </form>
+                <?php endif; ?>
+            </div>
+        <?php endforeach; ?>
+    <?php endif; ?>
+</div>
+
 
     <footer class="footer">
         <div class="container">
