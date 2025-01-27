@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 17/01/2025 às 17:43
+-- Tempo de geração: 27/01/2025 às 14:14
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -108,17 +108,19 @@ CREATE TABLE `consultas` (
   `id_paciente` int(11) NOT NULL,
   `id_medico` int(11) NOT NULL,
   `data_consulta` datetime NOT NULL,
-  `data_agendada` date NOT NULL
+  `data_agendada` date NOT NULL,
+  `cancelada` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Despejando dados para a tabela `consultas`
 --
 
-INSERT INTO `consultas` (`id`, `id_paciente`, `id_medico`, `data_consulta`, `data_agendada`) VALUES
-(1, 2, 1, '2025-01-17 16:49:29', '2025-01-17'),
-(2, 2, 6, '2025-01-17 16:52:47', '2025-01-17'),
-(3, 2, 1, '2025-01-17 17:31:42', '0000-00-00');
+INSERT INTO `consultas` (`id`, `id_paciente`, `id_medico`, `data_consulta`, `data_agendada`, `cancelada`) VALUES
+(1, 2, 1, '2025-01-17 16:49:29', '2025-01-17', 1),
+(2, 2, 6, '2025-01-17 16:52:47', '2025-01-17', 1),
+(3, 2, 1, '2025-01-17 17:31:42', '0000-00-00', 1),
+(4, 2, 7, '2025-01-21 16:34:40', '0000-00-00', 0);
 
 -- --------------------------------------------------------
 
@@ -139,7 +141,10 @@ CREATE TABLE `disponibilidade` (
 INSERT INTO `disponibilidade` (`id`, `id_medico`, `dataConsulta`) VALUES
 (1, 6, '2024-12-02'),
 (2, 6, '2024-12-02'),
-(3, 7, '2025-01-08');
+(3, 7, '2025-01-08'),
+(4, 7, '2025-02-13'),
+(5, 7, '2025-02-13'),
+(6, 7, '2025-01-01');
 
 -- --------------------------------------------------------
 
@@ -225,13 +230,13 @@ ALTER TABLE `confirmacaoconsulta`
 -- AUTO_INCREMENT de tabela `consultas`
 --
 ALTER TABLE `consultas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `disponibilidade`
 --
 ALTER TABLE `disponibilidade`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de tabela `disponibilidadeconsulta`

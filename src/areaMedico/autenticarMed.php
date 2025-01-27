@@ -18,7 +18,7 @@
                 if (password_verify($senha, $dados_med['senha'])) {
                     $_SESSION['id_med'] = $dados_med['id'];
                     $_SESSION['nome_med'] = $dados_med['nome'];
-                    header('Location: /ProjetoAgendamentoparaConsultorios/views/cadDisponibilidadeConsul.php');
+                    header('Location: /ProjetoAgendamentoparaConsultorios/public/perfilMedico.php');
                     exit();
                 } else {
                     echo "<script>alert('Senha incorreta!'); window.history.back();</script>";

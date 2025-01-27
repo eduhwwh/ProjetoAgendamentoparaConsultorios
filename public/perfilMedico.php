@@ -2,7 +2,7 @@
   session_start();
 
   // Verifica se o cliente está logado
-  $clienteLogado = isset($_SESSION['cliente_id']);
+  $medLogado = isset($_SESSION['id_med']);
 ?>
 
 <!DOCTYPE html>
@@ -39,14 +39,9 @@
         <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
         <nav class="menu-nav">
             <ul>
-                <?php if (isset($_SESSION['cliente_id'])): ?>
-                    <li><a href="../src/areaCliente/agendarConsulta.php">Agendar Disponibilidade</a></li>
-                    <li><a href="../src/areaCliente/minhasConsultas.php">Confirmação de consulta</a></li>
-                    <li><a href="../src/logoutCli.php" onclick="return confirm('Tem certeza que deseja sair?')">Sair</a></li>
-                <?php else: ?>
-                    <li><a href="../views/loginRequired.php">Agendar consulta</a></li>
-                    <li><a href="#">Consultas</a></li>
-                <?php endif; ?>
+                <li><a href="../views/cadDisponibilidadeConsul.php">Disponibilidade Consulta</a></li>
+                <li><a href="#">Confirmação das Consultas</a></li>
+                <li><a href="../src/logoutCli.php" onclick="return confirm('Tem certeza que deseja sair?')">Sair</a></li>
             </ul>
         </nav>
     </div>
