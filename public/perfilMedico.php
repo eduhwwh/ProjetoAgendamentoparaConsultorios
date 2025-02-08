@@ -25,6 +25,7 @@
 
   <link rel="stylesheet" href="../public/css/style.css">
   <link rel="stylesheet" href="../public/css/responsividade.css"><!--  Arquivo de responsividade -->
+  <link rel="shortcut icon" href="../../public/img/logo1.webp" type="image/x-icon">
   <script src="../public/Js/app.js"></script>
 
   <title>VivaClin</title>

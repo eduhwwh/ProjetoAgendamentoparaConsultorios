@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../public/css/style.css"> <!-- Atualize o caminho se necessário -->
+    <link rel="shortcut icon" href="../public/img/logo1.webp" type="image/x-icon">
     <title>Login Necessário</title>
     <style>
         body {

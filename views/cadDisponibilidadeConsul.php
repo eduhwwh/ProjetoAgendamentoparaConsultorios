@@ -32,6 +32,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../public/css/cadDisponibilidade.css">
+        <link rel="shortcut icon" href="../public/img/logo1.webp" type="image/x-icon">
+
         
         <title>VivaClin</title>
     </head>

@@ -18,20 +18,20 @@ $medicos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../public/css/agendarConsulta.css">
+    <link rel="shortcut icon" href="../../public/img/logo1.webp" type="image/x-icon">
+
     <title>Agendar Consulta</title>
-    <style>
-        /* Adicionar estilos básicos */
-        .container { width: 80%; margin: 0 auto; }
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
-        th { background-color: #f2f2f2; }
-        .btn { padding: 10px 15px; background-color: #28a745; color: #fff; text-decoration: none; border-radius: 5px; }
-    </style>
+
 </head>
+
 <body>
+    <div class="menu-spacing"></div>
+
     <div class="container">
         <h1>Agendar Consulta</h1>
         <table>
@@ -57,5 +57,7 @@ $medicos = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </tbody>
         </table>
     </div>
+    
 </body>
+
 </html>
