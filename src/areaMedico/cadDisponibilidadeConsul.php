@@ -28,7 +28,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['selectedDates'])) {
                 ]);
             }
         }
-
         echo "Disponibilidade cadastrada com sucesso!";
     } catch (Exception $erro) {
         error_log($erro->getMessage());
