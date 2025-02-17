@@ -41,7 +41,7 @@
         <nav class="menu-nav">
             <ul>
                 <li><a href="../views/cadDisponibilidadeConsul.php">Disponibilidade Consulta</a></li>
-                <li><a href="#">Confirmação das Consultas</a></li>
+                <!-- <li><a href="#">Confirmação das Consultas</a></li> -->
                 <li><a href="../src/logoutCli.php" onclick="return confirm('Tem certeza que deseja sair?')">Sair</a></li>
             </ul>
         </nav>
